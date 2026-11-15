@@ -1,53 +1,30 @@
-# Swift iOS Repository Template
+# finmo.
 
-Plantilla reutilizable para desarrollar aplicaciones **Swift/iOS** con GitHub, siguiendo convenciones de desarrollo, control de versiones e integración continua.
+**Tus finanzas, a tu ritmo.**
 
-## Características
+Finmo es una aplicación iOS de finanzas personales diseñada para registrar ingresos y gastos, analizar su evolución y planificar presupuestos y objetivos de ahorro.
 
-- **GitFlow:** organización del desarrollo mediante ramas `main`, `develop` y ramas temporales.
-- **GitHub Issues:** plantillas para reportar bugs, solicitar funcionalidades y registrar tareas técnicas.
-- **Pull Requests:** plantilla para documentar cambios, causas de errores y validaciones.
-- **SwiftLint:** análisis estático con las reglas predeterminadas.
-- **GitHub Actions:** CI preparada para SwiftLint, compilación y tests de Xcode.
-- **Documentación:** convenciones y guía de configuración inicial.
+Su objetivo es ofrecer una experiencia sencilla, visual y personalizable, sin conexiones bancarias y con control total sobre los datos registrados.
 
-## Uso
+## Funcionalidades previstas
 
-1. Seleccionar **Use this template → Create a new repository**.
-2. Clonar el repositorio y añadir el proyecto Xcode.
-3. Crear la rama `develop`.
-4. Configurar las variables de GitHub Actions y los Rulesets.
-5. Personalizar el README y comenzar el desarrollo.
+- Registro y gestión de ingresos y gastos.
+- Balance personal con saldo inicial configurable.
+- Análisis de ingresos, gastos y ahorro.
+- Presupuestos mensuales por categoría.
+- Objetivos de ahorro y planificación financiera.
+- Personalización de categorías y preferencias.
 
-Consulta [SETUP.md](docs/SETUP.md) para la configuración completa.
+## Desarrollo
 
-## Estructura
+El proyecto se desarrolla de forma incremental, comenzando por una primera versión centrada en el registro de movimientos y la consulta del balance.
 
-```text
-.github/
-├── ISSUE_TEMPLATE/
-│   ├── bug_report.yml
-│   ├── feature_request.yml
-│   └── task.yml
-├── workflows/
-│   └── ios-ci.yml
-└── pull_request_template.md
+**Estado:** En planificación y diseño.
 
-docs/
-└── SETUP.md
+**Plataforma:** iOS.
 
-.gitignore
-.swiftlint.yml
-CONTRIBUTING.md
-README.md
-```
+## Documentación
 
-## Convenciones
+La documentación funcional y técnica se encuentra en el directorio [`docs/`](docs/).
 
-Las convenciones de ramas, commits, Issues y Pull Requests están documentadas en [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## Personalización
-
-Esta plantilla proporciona la estructura inicial del repositorio. Cada aplicación deberá adaptar la configuración de Xcode, los workflows de CI y su documentación.
-
-Las configuraciones de GitHub que no se copian automáticamente se detallan en [SETUP.md](docs/SETUP.md).
+Las convenciones de desarrollo y contribución están disponibles en [`CONTRIBUTING.md`](CONTRIBUTING.md).
