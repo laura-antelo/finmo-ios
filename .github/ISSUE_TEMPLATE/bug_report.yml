@@ -1,0 +1,57 @@
+
+name: "🐛 Reportar un error"
+description: "Comunica un problema en el funcionamiento de la aplicación."
+title: "[BUG] "
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Gracias por informar del error.
+        Completa la información para facilitar su resolución.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción del problema
+      description: Explica brevemente qué está ocurriendo.
+      placeholder: Al acceder a la pantalla de inicio...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Pasos para reproducirlo
+      description: Indica cómo podemos reproducir el error.
+      placeholder: |
+        1. Abrir la aplicación
+        2. Acceder a...
+        3. Pulsar en...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+      description: ¿Qué debería suceder?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Comportamiento actual
+      description: ¿Qué sucede realmente?
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Capturas o información adicional
+      description: Adjunta imágenes, registros o detalles relevantes.
+    validations:
+      required: false

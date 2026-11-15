@@ -1,0 +1,122 @@
+name: iOS CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+
+  push:
+    branches:
+      - develop
+      - main
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  IOS_PROJECT: ${{ vars.IOS_PROJECT }}
+  IOS_WORKSPACE: ${{ vars.IOS_WORKSPACE }}
+  IOS_SCHEME: ${{ vars.IOS_SCHEME }}
+  IOS_DESTINATION: ${{ vars.IOS_DESTINATION }}
+
+jobs:
+  lint:
+    name: SwiftLint
+    runs-on: macos-15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install SwiftLint
+        env:
+          SWIFTLINT_VERSION: "0.65.1"
+        run: |
+          curl --fail --location --silent --show-error \
+            --output SwiftLint.pkg \
+            "https://github.com/realm/SwiftLint/releases/download/${SWIFTLINT_VERSION}/SwiftLint.pkg"
+
+          sudo installer -pkg SwiftLint.pkg -target /
+
+          swiftlint version
+
+      - name: Run SwiftLint
+        shell: bash
+        run: |
+          if ! find . -type f -name "*.swift" \
+            -not -path "./Pods/*" \
+            -not -path "./Carthage/*" \
+            -not -path "./.build/*" \
+            -not -path "./DerivedData/*" \
+            -print -quit | grep -q .; then
+            echo "::notice::No Swift files found. SwiftLint skipped."
+            exit 0
+          fi
+
+          swiftlint lint --strict --config .swiftlint.yml
+
+  build:
+    name: Build
+    runs-on: macos-15
+
+    if: >-
+      ${{
+        vars.IOS_SCHEME != '' &&
+        (vars.IOS_PROJECT != '' || vars.IOS_WORKSPACE != '')
+      }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Build application
+        shell: bash
+        run: |
+          if [[ -n "$IOS_WORKSPACE" ]]; then
+            TARGET=(-workspace "$IOS_WORKSPACE")
+          else
+            TARGET=(-project "$IOS_PROJECT")
+          fi
+
+          xcodebuild \
+            "${TARGET[@]}" \
+            -scheme "$IOS_SCHEME" \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+  test:
+    name: Tests
+    runs-on: macos-15
+
+    if: >-
+      ${{
+        vars.IOS_SCHEME != '' &&
+        vars.IOS_DESTINATION != '' &&
+        (vars.IOS_PROJECT != '' || vars.IOS_WORKSPACE != '')
+      }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run tests
+        shell: bash
+        run: |
+          if [[ -n "$IOS_WORKSPACE" ]]; then
+            TARGET=(-workspace "$IOS_WORKSPACE")
+          else
+            TARGET=(-project "$IOS_PROJECT")
+          fi
+
+          xcodebuild \
+            "${TARGET[@]}" \
+            -scheme "$IOS_SCHEME" \
+            -destination "$IOS_DESTINATION" \
+            -configuration Debug \
+            CODE_SIGNING_ALLOWED=NO \
+            test

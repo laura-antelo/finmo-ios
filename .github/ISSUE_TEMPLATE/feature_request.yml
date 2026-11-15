@@ -1,0 +1,49 @@
+
+name: "✨ Solicitar funcionalidad"
+description: "Propón una nueva funcionalidad o mejora."
+title: "[FEATURE] "
+labels: ["enhancement"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Describe la funcionalidad que te gustaría incorporar.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: ¿Qué funcionalidad quieres implementar?
+      placeholder: Permitir filtrar los gastos por categoría.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivación
+      description: ¿Qué problema resuelve o qué aporta?
+      placeholder: Facilitar la consulta de gastos específicos.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Criterios de aceptación
+      description: ¿Qué condiciones deben cumplirse para considerar terminada la funcionalidad?
+      placeholder: |
+        - [ ] Se pueden seleccionar una o varias categorías.
+        - [ ] La lista muestra únicamente los gastos filtrados.
+        - [ ] Se pueden restablecer los filtros.
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Información adicional
+      description: Referencias, diseños de Figma o capturas.
+    validations:
+      required: false

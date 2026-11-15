@@ -1,0 +1,43 @@
+
+name: "🛠️ Tarea técnica"
+description: "Registra tareas de mantenimiento, configuración o documentación."
+title: "[TASK] "
+
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descripción
+      description: ¿Qué trabajo debe realizarse?
+      placeholder: Configurar SwiftLint en el proyecto.
+    validations:
+      required: true
+
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objetivo
+      description: ¿Por qué es necesario este trabajo?
+      placeholder: Unificar las convenciones de código.
+    validations:
+      required: true
+
+  - type: textarea
+    id: checklist
+    attributes:
+      label: Tareas
+      description: Divide el trabajo en pasos si es necesario.
+      placeholder: |
+        - [ ] Añadir el archivo .swiftlint.yml
+        - [ ] Configurar las reglas
+        - [ ] Comprobar su funcionamiento
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Información adicional
+      description: Referencias o detalles técnicos.
+    validations:
+      required: false

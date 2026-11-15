@@ -1,0 +1,19 @@
+
+# SwiftLint configuration
+# https://github.com/realm/SwiftLint
+
+# Mantener todas las reglas predeterminadas.
+disabled_rules: []
+
+# No activar reglas adicionales por ahora.
+opt_in_rules: []
+
+# Directorios que SwiftLint no debe analizar.
+excluded:
+  - Pods
+  - Carthage
+  - .build
+  - DerivedData
+
+# Mostrar advertencias y errores en la salida.
+reporter: xcode
