@@ -65,7 +65,7 @@ Incluirá:
 - Gráficos de evolución de ingresos, gastos y ahorro.
 - Comparación entre períodos.
 
-Esta sección se incorporará en la versión v0.2.
+Esta sección se incorporará en la versión v1.1.0.
 
 ### 3.4. Planificación
 
@@ -83,7 +83,7 @@ Posteriormente incorporará:
 - Seguimiento de aportaciones.
 - Previsiones financieras.
 
-Esta sección se incorporará en la versión v0.3.
+Esta sección se incorporará en la versión v1.2.0.
 
 ## 4. Pantallas secundarias
 
@@ -130,23 +130,23 @@ En versiones posteriores podrá incorporar:
 
 Permitirá consultar, crear y modificar categorías personalizadas.
 
-Se incorporará en la versión v0.4.
+Se incorporará en la versión v1.3.0.
 
 ### 4.6. Detalle y edición de presupuestos
 
 Permitirá consultar y modificar los límites de gasto asociados a una categoría.
 
-Se incorporará en la versión v0.3.
+Se incorporará en la versión v1.2.0.
 
 ### 4.7. Detalle y edición de objetivos
 
 Permitirá consultar el progreso de un objetivo de ahorro, registrar aportaciones y modificar su configuración.
 
-Se incorporará en la versión v0.5.
+Se incorporará en la versión v1.4.0.
 
 ## 5. Evolución de la navegación
 
-### v1.1.0 — Mis movimientos
+### v1.0.0 — Mis movimientos
 
 La navegación principal incluirá únicamente:
 
@@ -156,7 +156,7 @@ La navegación principal incluirá únicamente:
 
 También estarán disponibles las pantallas secundarias necesarias para gestionar movimientos y configurar el saldo inicial.
 
-### v1.2.0 — Entender mis finanzas
+### v1.1.0 — Entender mis finanzas
 
 Se incorporará la sección Análisis.
 
@@ -167,7 +167,7 @@ La navegación principal pasará a incluir:
 - Análisis.
 - Botón `+`.
 
-### v1.3.0 — Controlar mis gastos
+### v1.2.0 — Controlar mis gastos
 
 Se incorporará la sección Planificación, inicialmente centrada en presupuestos.
 
@@ -179,15 +179,15 @@ La navegación principal incluirá:
 - Planificación.
 - Botón `+`.
 
-### v1.4.0 — Organización personalizada
+### v1.3.0 — Organización personalizada
 
 Se ampliarán las capacidades de organización y búsqueda sin añadir nuevas pestañas principales.
 
-### v1.5.0 — Planificación avanzada
+### v1.4.0 — Planificación avanzada
 
 La sección Planificación incorporará objetivos de ahorro y funcionalidades de previsión.
 
-### v1.6.0+ — Experiencia avanzada
+### v1.5.0+ — Experiencia avanzada
 
 Se ampliará la configuración con nuevas opciones de personalización, seguridad y sincronización.
 
